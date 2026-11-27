@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Mohammad Alam — Cyber Security Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f5f3;
+    --surface:#ffffff;
+    --surface-2:#eceee9;
+    --ink:#17201c;
+    --ink-2:#43514a;
+    --ink-3:#6b7a71;
+    --line:#d8ddd6;
+    --accent:#0f5c46;
+    --accent-ink:#0a4232;
+    --accent-soft:#e2efe8;
+    --gold:#b7791f;
+    --gold-soft:#f7ecd4;
+    --navy:#16283a;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(23,32,28,.06),0 10px 30px rgba(23,32,28,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#101613;
+      --surface:#171e1a;
+      --surface-2:#1e2722;
+      --ink:#e8ede9;
+      --ink-2:#b7c2ba;
+      --ink-3:#8b9a90;
+      --line:#2a352e;
+      --accent:#4cc79a;
+      --accent-ink:#7adbb6;
+      --accent-soft:#1c2f27;
+      --gold:#e0aa4a;
+      --gold-soft:#2e2716;
+      --navy:#0e1a26;
+      --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 30px rgba(0,0,0,.25);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  button,[role="button"],select,summary{ min-height:2.25rem; }
+  a{color:var(--accent);text-underline-offset:3px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px 64px}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--navy);color:#eef3f0;
+    margin:0 -20px;padding:0;
+  }
+  .hero-inner{max-width:1120px;margin:0 auto;padding:44px 20px 40px}
+  .hero-top{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
+  .monogram{
+    width:76px;height:76px;flex:0 0 76px;border-radius:16px;
+    background:#0f5c46;color:#fff;display:grid;place-items:center;
+    font-family:"Newsreader",Georgia,serif;font-size:30px;font-weight:600;letter-spacing:.02em;
+    border:1px solid rgba(255,255,255,.22);
+  }
+  .hero h1{
+    font-family:"Newsreader",Georgia,serif;font-weight:600;
+    font-size:clamp(2.1rem,5.2vw,3.3rem);line-height:1.05;margin:2px 0 6px;letter-spacing:-.01em;
+  }
+  .hero .role{font-size:clamp(1rem,2.4vw,1.2rem);color:#bcd6c9;font-weight:500;margin:0}
+  .hero .tagline{max-width:680px;color:#d7e2db;margin:18px 0 0;font-size:1.02rem;line-height:1.65}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:22px}
+  .meta-chip{
+    display:inline-flex;align-items:center;gap:7px;
+    border:1px solid rgba(255,255,255,.24);border-radius:999px;
+    padding:7px 13px;font-size:.86rem;color:#e6efe9;background:rgba(255,255,255,.06);
+  }
+  .meta-chip svg{width:14px;height:14px;flex:0 0 14px;opacity:.85}
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.14);border-radius:12px;overflow:hidden;margin-top:28px;
+  }
+  .stat{background:#1b3049;padding:16px 18px}
+  .stat b{display:block;font-size:1.45rem;line-height:1.1;font-weight:700;color:#fff}
+  .stat span{font-size:.82rem;color:#a9bfb2}
+  @media (max-width:640px){ .stats{grid-template-columns:repeat(2,1fr)} .monogram{width:60px;height:60px;flex-basis:60px;font-size:24px} }
+
+  /* ---------- Nav ---------- */
+  .toc{
+    position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+    margin:0 -20px;padding:0 20px;
+  }
+  .toc-inner{max-width:1120px;margin:0 auto;display:flex;gap:4px;flex-wrap:wrap;padding:8px 0}
+  .toc a{
+    color:var(--ink-2);text-decoration:none;font-size:.9rem;font-weight:500;
+    padding:9px 13px;border-radius:8px;white-space:nowrap;min-height:36px;display:inline-flex;align-items:center;
+  }
+  .toc a:hover{background:var(--surface-2);color:var(--ink)}
+
+  /* ---------- Sections ---------- */
+  section{margin-top:44px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+  .sec-head h2{
+    font-family:"Newsreader",Georgia,serif;font-size:1.65rem;font-weight:600;margin:0;letter-spacing:-.01em;
+  }
+  .sec-head .rule{flex:1;height:1px;background:var(--line)}
+  .sec-head .no{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--ink-3)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+  .about-card{padding:26px 28px}
+  .about-card p{margin:0 0 14px;color:var(--ink-2);font-size:1.02rem}
+  .about-card p:last-child{margin-bottom:0}
+  .about-card strong{color:var(--ink)}
+  .frameworks{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding-top:18px;border-top:1px dashed var(--line)}
+  .frameworks span{font-family:"IBM Plex Mono",monospace;font-size:.78rem;padding:6px 10px;border-radius:6px;background:var(--surface-2);color:var(--ink-2)}
+
+  /* Focus areas */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .filters button{
+    font:inherit;font-size:.88rem;font-weight:500;cursor:pointer;
+    border:1px solid var(--line);background:var(--surface);color:var(--ink-2);
+    border-radius:999px;padding:8px 15px;min-height:38px;
+  }
+  .filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  @media (prefers-color-scheme: dark){ .filters button[aria-pressed="true"]{color:#0c1712} }
+  .focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media (max-width:720px){ .focus-grid{grid-template-columns:1fr} }
+  .focus-card{padding:22px 24px}
+  .focus-card.is-hidden{display:none}
+  .focus-card h3{margin:0 0 6px;font-size:1.05rem;font-weight:600;display:flex;align-items:center;gap:10px}
+  .focus-card h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:0 0 9px}
+  .focus-card p{margin:0 0 14px;color:var(--ink-2);font-size:.94rem}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tags span{font-size:.8rem;padding:5px 9px;border-radius:6px;background:var(--accent-soft);color:var(--accent-ink);font-weight:500}
+
+  /* Experience */
+  .timeline{position:relative;padding-left:26px}
+  .timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .job{position:relative;padding:20px 22px;margin-bottom:14px}
+  .job::before{
+    content:"";position:absolute;left:-26px;top:26px;width:12px;height:12px;border-radius:50%;
+    background:var(--surface);border:3px solid var(--accent);margin-left:1px;
+  }
+  .job-head{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;justify-content:space-between}
+  .job h3{margin:0;font-size:1.08rem;font-weight:600}
+  .job .org{color:var(--accent-ink);font-weight:600}
+  .job .dates{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--ink-3);white-space:nowrap}
+  .job .loc{font-size:.86rem;color:var(--ink-3);margin:2px 0 0}
+  .job ul{margin:12px 0 0;padding-left:18px;color:var(--ink-2);font-size:.95rem}
+  .job li{margin-bottom:5px}
+  .job li::marker{color:var(--accent)}
+  .job.current{border-color:var(--accent)}
+  .now-badge{
+    font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    background:var(--gold-soft);color:var(--gold);border-radius:5px;padding:3px 8px;vertical-align:2px;margin-left:8px;
+  }
+
+  /* Credentials */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:720px){ .two-col{grid-template-columns:1fr} }
+  .cred-card{padding:22px 24px}
+  .cred-card h3{margin:0 0 4px;font-size:1rem;font-weight:600}
+  .cred-card .sub{margin:0 0 14px;color:var(--ink-3);font-size:.86rem}
+  .cred-list{list-style:none;margin:0;padding:0}
+  .cred-list li{display:flex;gap:12px;padding:11px 0;border-top:1px solid var(--line);align-items:flex-start}
+  .cred-list li:first-child{border-top:none;padding-top:2px}
+  .cred-list svg{width:18px;height:18px;flex:0 0 18px;margin-top:3px;color:var(--accent)}
+  .cred-list b{display:block;font-size:.95rem;font-weight:600}
+  .cred-list span{font-size:.85rem;color:var(--ink-2)}
+  .edu-list{list-style:none;margin:0;padding:0}
+  .edu-list li{padding:14px 0;border-top:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:baseline}
+  .edu-list li:first-child{border-top:none;padding-top:2px}
+  .edu-list b{font-size:.98rem}
+  .edu-list .school{color:var(--ink-2);font-size:.9rem;display:block}
+  .edu-list .year{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--ink-3)}
+
+  footer{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);color:var(--ink-3);font-size:.88rem;display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="monogram" aria-hidden="true">MA</div>
+      <div>
+        <h1>Mohammad Alam</h1>
+        <p class="role">Cyber Security Specialist — Security Architecture, Cloud &amp; Identity</p>
+      </div>
+    </div>
+    <p class="tagline">Cybersecurity specialist with over 20 years across enterprise technology and security, focused on security architecture, threat modelling and risk — designing secure solutions across cloud and identity using NIST, ISO and MITRE frameworks.</p>
+    <div class="meta-row" aria-label="Profile details">
+      <span class="meta-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Claymore, NSW, Australia</span>
+      <span class="meta-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Cyber Security Specialist · KION Group</span>
+      <span class="meta-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>20+ years in enterprise IT &amp; security</span>
+    </div>
+    <div class="stats" aria-label="Career at a glance">
+      <div class="stat"><b>20+</b><span>Years of experience</span></div>
+      <div class="stat"><b>3</b><span>Cloud platforms — Azure, AWS, GCP</span></div>
+      <div class="stat"><b>5</b><span>Employers across AU &amp; Bangladesh</span></div>
+      <div class="stat"><b>6</b><span>Industry certifications held</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Page sections">
+  <div class="toc-inner">
+    <a href="#about">About</a>
+    <a href="#focus">Focus areas</a>
+    <a href="#experience">Experience</a>
+    <a href="#credentials">Certifications</a>
+    <a href="#education">Education</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <section id="about">
+    <div class="sec-head"><span class="no">01</span><h2>About</h2><span class="rule"></span></div>
+    <div class="card about-card">
+      <p><strong>Cyber Security Specialist at KION Group</strong> since July 2022, working across security architecture, security engineering, monitoring and incident response. I own security infrastructure end to end — from SIEM and EDR platforms through to the identity provider — and design the detection rules and solutions that surface malicious behaviour so SOC analysts can act on it.</p>
+      <p>My work centres on <strong>security architecture, threat modelling (STRIDE), risk assessment and identity</strong> — IAM, PAM and CIAM — across Azure, AWS and GCP environments, with Microsoft Sentinel and Splunk for monitoring, and SOAR and Python for automation. Before KION, I spent three years as an Infrastructure Specialist at UNSW and close to a decade in network engineering and architecture at Grameenphone in Bangladesh.</p>
+      <p>I frame security decisions in terms the business can act on: classify the data first, apply least-privilege and Zero Trust controls, and where risk remains, document it with a named owner for formal acceptance.</p>
+      <div class="frameworks" aria-label="Frameworks and approaches">
+        <span>NIST</span><span>ISO 27001</span><span>MITRE ATT&amp;CK</span><span>STRIDE</span><span>Zero Trust</span><span>Defence in depth</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="focus">
+    <div class="sec-head"><span class="no">02</span><h2>Focus areas</h2><span class="rule"></span></div>
+    <div class="filters" role="group" aria-label="Filter focus areas">
+      <button type="button" data-filter="all" aria-pressed="true">All areas</button>
+      <button type="button" data-filter="architecture" aria-pressed="false">Architecture</button>
+      <button type="button" data-filter="cloud" aria-pressed="false">Cloud</button>
+      <button type="button" data-filter="identity" aria-pressed="false">Identity</button>
+      <button type="button" data-filter="risk" aria-pressed="false">Risk &amp; threat modelling</button>
+      <button type="button" data-filter="detection" aria-pressed="false">Detection &amp; response</button>
+    </div>
+    <div class="focus-grid">
+      <article class="card focus-card" data-cat="architecture">
+        <h3><span class="dot"></span>Security Architecture</h3>
+        <p>Designing secure solutions end to end — security by design, architecture review and approval, and controls mapped to business risk.</p>
+        <div class="tags"><span>Security by design</span><span>Zero Trust</span><span>Defence in depth</span><span>Secure landing zones</span><span>Architecture review (CAR / ARB)</span></div>
+      </article>
+      <article class="card focus-card" data-cat="cloud">
+        <h3><span class="dot"></span>Cloud Security</h3>
+        <p>Securing Azure-first estates with private networking, encryption and continuous posture management across Azure, AWS and GCP.</p>
+        <div class="tags"><span>Microsoft Azure</span><span>AWS</span><span>GCP</span><span>Private endpoints</span><span>Key Vault</span><span>Defender for Cloud</span><span>Azure Policy</span><span>IaC</span></div>
+      </article>
+      <article class="card focus-card" data-cat="identity">
+        <h3><span class="dot"></span>Identity &amp; Access</h3>
+        <p>Workforce and customer identity: joiner–mover–leaver lifecycle, privileged access and federation done with least privilege by default.</p>
+        <div class="tags"><span>IAM / IGA</span><span>PAM</span><span>CIAM</span><span>Entra ID</span><span>MFA &amp; conditional access</span><span>RBAC</span><span>SAML / OIDC / OAuth 2.0</span><span>Just-in-time access</span></div>
+      </article>
+      <article class="card focus-card" data-cat="risk">
+        <h3><span class="dot"></span>Threat Modelling &amp; Risk</h3>
+        <p>Modelling threats before they become incidents, and presenting residual risk in business terms for informed, owned decisions.</p>
+        <div class="tags"><span>STRIDE</span><span>MITRE ATT&amp;CK</span><span>Risk assessment</span><span>Vendor risk</span><span>Residual risk &amp; acceptance</span><span>API security · OWASP</span></div>
+      </article>
+      <article class="card focus-card" data-cat="detection">
+        <h3><span class="dot"></span>Detection &amp; Response</h3>
+        <p>Running SIEM and EDR platforms, writing detection rules, and hunting threats across endpoints and cloud workloads.</p>
+        <div class="tags"><span>Microsoft Sentinel</span><span>Splunk</span><span>Microsoft Defender</span><span>CrowdStrike</span><span>Detection engineering</span><span>Threat hunting</span><span>SOAR</span><span>Python</span></div>
+      </article>
+      <article class="card focus-card" data-cat="architecture cloud">
+        <h3><span class="dot"></span>Network Security</h3>
+        <p>A foundation in network engineering and architecture — segmentation, firewalls and WAF — applied to modern cloud networks.</p>
+        <div class="tags"><span>Hub-and-spoke VNets</span><span>NSGs</span><span>Azure Firewall</span><span>WAF</span><span>Network segmentation</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head"><span class="no">03</span><h2>Experience</h2><span class="rule"></span></div>
+    <div class="timeline">
+      <article class="card job current">
+        <div class="job-head">
+          <h3>Cyber Security Specialist <span class="now-badge">Current</span></h3>
+          <span class="dates">Jul 2022 — Present</span>
+        </div>
+        <p class="loc"><span class="org">KION Group</span> · Australia</p>
+        <ul>
+          <li>Security architecture and solution design, with threat modelling (STRIDE) and risk assessment for new and changing systems.</li>
+          <li>Own security infrastructure end to end — SIEM, EDR and the identity provider (users and groups).</li>
+          <li>Design EDR and SIEM solutions and detection rules so malicious endpoint behaviour surfaces as actionable alerts for SOC analysts, including Microsoft Defender monitoring.</li>
+          <li>Identity and access work across IAM, PAM and CIAM; security across Azure, AWS and GCP.</li>
+          <li>Monitoring, incident response, detection engineering and threat hunting; automation with SOAR and Python.</li>
+        </ul>
+      </article>
+
+      <article class="card job">
+        <div class="job-head">
+          <h3>Infrastructure Specialist</h3>
+          <span class="dates">Jan 2019 — Jun 2022</span>
+        </div>
+        <p class="loc"><span class="org">UNSW</span> · Sydney, Australia</p>
+        <ul>
+          <li>Enterprise infrastructure in a large university environment, including security-focused incident work — containing compromised devices and blocking unapproved remote management tools from the network.</li>
+          <li>End-to-end solution design coordinated through architecture approval processes (CAR and ARB), applying security by design principles.</li>
+        </ul>
+      </article>
+
+      <article class="card job">
+        <div class="job-head">
+          <h3>Senior Systems Engineer</h3>
+          <span class="dates">2018</span>
+        </div>
+        <p class="loc"><span class="org">Go Systems</span> · Australia</p>
+        <ul>
+          <li>Senior systems engineering across client infrastructure environments.</li>
+        </ul>
+      </article>
+
+      <article class="card job">
+        <div class="job-head">
+          <h3>Systems Engineer</h3>
+          <span class="dates">2016 — 2018</span>
+        </div>
+        <p class="loc"><span class="org">Nexus</span> · Australia</p>
+        <ul>
+          <li>Systems engineering and infrastructure support.</li>
+        </ul>
+      </article>
+
+      <article class="card job">
+        <div class="job-head">
+          <h3>Network Engineer / Network Architect</h3>
+          <span class="dates">Mar 2006 — Nov 2015</span>
+        </div>
+        <p class="loc"><span class="org">Grameenphone</span> · Bangladesh</p>
+        <ul>
+          <li>Almost a decade engineering and architecting networks for one of Bangladesh's largest telecommunications operators — the foundation for my later work in network security and segmentation.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="sec-head"><span class="no">04</span><h2>Certifications &amp; training</h2><span class="rule"></span></div>
+    <div class="two-col">
+      <div class="card cred-card">
+        <h3>Certifications</h3>
+        <p class="sub">Credentials held, as listed on my resume.</p>
+        <ul class="cred-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg><div><b>CrowdStrike CCFR</b><span>CrowdStrike Certified Falcon Responder</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg><div><b>CrowdStrike CCFH</b><span>CrowdStrike Certified Falcon Hunter</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg><div><b>VMware VCP-DCV</b><span>VMware Certified Professional — Data Center Virtualization</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg><div><b>Cisco CCNA</b><span>Cisco Certified Network Associate</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg><div><b>Red Hat RHCSA / RHCE</b><span>Red Hat Certified System Administrator &amp; Engineer</span></div></li>
+        </ul>
+      </div>
+      <div class="card cred-card">
+        <h3>Professional development</h3>
+        <p class="sub">Training completed, as listed on my resume under professional development.</p>
+        <ul class="cred-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg><div><b>CISSP</b><span>Security architecture &amp; management training</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg><div><b>Microsoft SC-100 &amp; AZ-500</b><span>Cybersecurity Architect &amp; Azure Security Engineer training</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg><div><b>AWS Solutions Architect Associate</b><span>Cloud architecture training</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg><div><b>Splunk</b><span>SIEM platform training</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg><div><b>ITIL v3</b><span>IT service management training</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sec-head"><span class="no">05</span><h2>Education</h2><span class="rule"></span></div>
+    <div class="card cred-card">
+      <ul class="edu-list">
+        <li><div><b>Graduate Certificate in Cyber Security</b><span class="school">UNSW Canberra</span></div><span class="year">2023</span></li>
+        <li><div><b>Master of Business Administration (MBA)</b><span class="school">IIUC, Bangladesh</span></div><span class="year">2008</span></li>
+        <li><div><b>Bachelor of Computer Applications</b><span class="school">Bangalore University, India</span></div><span class="year">2004</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <span>Mohammad Alam · Cyber Security Specialist · Claymore, NSW</span>
+    <span>Security architecture · Cloud · Identity · Threat modelling · Risk</span>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var buttons = document.querySelectorAll('.filters button');
+    var cards = document.querySelectorAll('.focus-card');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        buttons.forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+        btn.setAttribute('aria-pressed','true');
+        var f = btn.getAttribute('data-filter');
+        cards.forEach(function(card){
+          var cats = (card.getAttribute('data-cat') || '').split(' ');
+          var show = (f === 'all') || cats.indexOf(f) !== -1;
+          card.classList.toggle('is-hidden', !show);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
